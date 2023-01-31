@@ -18,7 +18,7 @@ namespace Clientes.Data.Migrations
                     CPF = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     TELEFONE = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: false),
                     EMAIL = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DATANASCIMENTO = table.Column<DateTime>(type: "datetime", nullable: false)
+                    DATANASCIMENTO = table.Column<DateTime>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -35,12 +35,6 @@ namespace Clientes.Data.Migrations
                 name: "IX_CLIENTE_EMAIL",
                 table: "CLIENTE",
                 column: "EMAIL",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CLIENTE_NOME",
-                table: "CLIENTE",
-                column: "NOME",
                 unique: true);
         }
 

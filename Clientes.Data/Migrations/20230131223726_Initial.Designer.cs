@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Clientes.Data.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    [Migration("20221229081845_Initial")]
+    [Migration("20230131223726_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,7 +37,7 @@ namespace Clientes.Data.Migrations
                         .HasColumnName("CPF");
 
                     b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime")
+                        .HasColumnType("date")
                         .HasColumnName("DATANASCIMENTO");
 
                     b.Property<string>("Email")
@@ -63,9 +63,6 @@ namespace Clientes.Data.Migrations
                         .IsUnique();
 
                     b.HasIndex("Email")
-                        .IsUnique();
-
-                    b.HasIndex("Nome")
                         .IsUnique();
 
                     b.ToTable("CLIENTE", (string)null);

@@ -55,7 +55,7 @@ namespace Clientes.Data.Reposirories
             }
         }
 
-        public Cliente GetByEmail(string email)
+        public Cliente? GetByEmail(string email)
         {
             using (var context = new SqlServerContext())
             {

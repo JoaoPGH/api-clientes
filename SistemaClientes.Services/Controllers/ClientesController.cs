@@ -28,7 +28,7 @@ namespace SistemaClientes.Services.Controllers
                     Cpf = model.Cpf,
                     Telefone = model.Telefone,
                     Email = model.Email,
-                    DataNascimento = DateTime.Parse(model.DataNascimento)
+                    DataNascimento = DateTime.Parse(model.DataNascimento),
 
                 };
 
@@ -115,7 +115,7 @@ namespace SistemaClientes.Services.Controllers
                         Cpf = item.Cpf,
                         Telefone = item.Telefone,
                         Email = item.Email,
-                        DataNascimento = item.DataNascimento.ToString("dd/MM/yyyy"),
+                        DataNascimento = DateTime.Parse(item.DataNascimento.ToString("dd/MM/yyyy")),
 
                     });
 
@@ -150,7 +150,7 @@ namespace SistemaClientes.Services.Controllers
                     Cpf = cliente.Cpf,
                     Telefone = cliente.Telefone,
                     Email = cliente.Email,
-                    DataNascimento = cliente.DataNascimento.ToString("dd/MM/yyyy"),
+                    DataNascimento = DateTime.Parse(cliente.DataNascimento.ToString("dd/MM/yyyy")),
                 };
 
                 return StatusCode(200, model);
